@@ -9,17 +9,12 @@ class KeepAwake: NSObject {
     }
 
     @objc func activate() -> Void {
-        DispatchQueue.main.async {
-            let app = UIApplication.shared;
-            app.isIdleTimerDisabled = true;
-        }
+        UIApplication.shared.isIdleTimerDisabled = false
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
 
     @objc func deactivate() -> Void {
-        DispatchQueue.main.async {
-            let app = UIApplication.shared;
-            app.isIdleTimerDisabled = false;
-        }
+        UIApplication.shared.isIdleTimerDisabled = false
     }
 }
